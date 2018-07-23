@@ -1,0 +1,5 @@
+com\test\service\IPersonService.class
+com\test\dao\PersonMapper.class
+com\test\controller\PersonController.class
+com\test\model\Person.class
+com\test\service\impl\PersonServiceImpl.class
