@@ -15,8 +15,13 @@
     <!-- 启用spring mvc 注解 -->
     <context:annotation-config />
     
+    <!-- 加载配置属性文件 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath:config.properties" />
+    <!-- 加载应用属性实例，可通过  @Value("#{CONFIG['jdbc.driver']}") String jdbcDriver 方式引用 -->
+    <!-- <util:properties id="CONFIG" location="classpath:config.properties" local-override="true"/> -->
+    
     <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan base-package="com.test.controller" />
+    <context:component-scan base-package="com.test.**.controller" />
 
     <!-- 完成请求和注解POJO的映射 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />

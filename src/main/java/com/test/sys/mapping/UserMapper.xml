@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.sys.dao.UserMapper">
+    <!-- 查询所有person -->  
+    <select id="getUserByUserName" resultType="User" >  
+        select id,username,password,salt from sys_user 
+        <if test="username != null and username != ''">
+        	where username = #{username}
+        </if>
+    </select>
+    
+    <!-- 插入User信息 -->
+    <insert id="insert" >
+    	insert into sys_user(
+    		id,
+    		username,
+    		password,
+    		salt
+    	) 
+    	values (
+    		#{id},
+    		#{username},
+    		#{password},
+    		#{salt}
+    	)
+    </insert>
+    
+    <select id="select" resultType="User">
+    	select id,username,password,salt from sys_user 
+    	where id = #{id}
+    </select>
+    
+    <delete id="delete" >
+    	delete from sys_user where id = #{id}
+    </delete>
+    
+</mapper>

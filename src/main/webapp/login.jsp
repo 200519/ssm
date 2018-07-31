@@ -13,9 +13,12 @@
 	
 	<div>用户：<input id="username" name="username" value=""></div>
 	
-	<div>密码：<input id="password" name="password" value="" type="password"></div>
+	<div>密码：<input id="password" name="password" type="password" value="" ></div>
 	
 	<button name="submitBtn" id="submitBtn">确定</button>
+	
 	</form>
+	<%-- <button name="registerBtn" id="registerBtn" onclick="window.location.href='${ctx}/register.jsp'">注册</button> --%>
+	<a href="${ctx}/register.jsp">注册</a>
 </body>
 </html>
