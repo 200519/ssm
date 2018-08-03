@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/include/taglib.tag" %>
 
 <html>
     <head>
@@ -11,11 +11,13 @@
             <tr>
                 <th>姓名</th>
                 <th>年龄</th>
+                <th>操作</th>
             </tr>
             <c:forEach items="${persons}" var="person">
                 <tr>
                     <td>${person.name }</td>
                     <td>${person.age }</td>
+                    <td><a href="${ctx}/personController/personDetail?id=${person.id}" target="view_window">查看</a></td>
                 </tr>
             </c:forEach>
         </table>

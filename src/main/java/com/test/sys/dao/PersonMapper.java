@@ -11,4 +11,5 @@ public interface PersonMapper extends BaseDao<PersonMapper,Person>{
      * @return
      */
     List<Person> queryAll();
+    
 }

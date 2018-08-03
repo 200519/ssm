@@ -2,6 +2,7 @@ package com.test.sys.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.test.common.dao.impl.BaseDaoImpl;
 import com.test.sys.dao.UserMapper;
@@ -9,6 +10,7 @@ import com.test.sys.model.User;
 import com.test.sys.service.IUserService;
 
 @Service("userService")
+@Transactional(readOnly = true)
 public class UserServiceImpl extends BaseDaoImpl<UserMapper,User> implements IUserService{
 	
 	private UserMapper userMapper;

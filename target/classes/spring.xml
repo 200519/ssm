@@ -15,4 +15,19 @@
     <!-- 自动注入 -->
     <context:component-scan base-package="com.test.**.service.impl" />
     
+    <import resource="classpath*:mybatis-spring.xml" />
+    <import resource="classpath*:mybatis-config.xml" />
+    <import resource="classpath*:applicationContext.xml" />
+
+	<!-- 将多个配置文件读取到容器中，交给Spring管理 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<!-- 这里支持多种寻址方式：classpath和file -->
+				<value>classpath:config.properties</value>
+			</list>
+		</property>
+	</bean>
+    
 </beans>

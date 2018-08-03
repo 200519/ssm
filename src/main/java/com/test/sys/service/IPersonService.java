@@ -12,4 +12,6 @@ public interface IPersonService extends BaseService<PersonMapper,Person>{
      * @return
      */
     List<Person> loadPersons();
+    
+    void insertList(List<Person> list);
 }

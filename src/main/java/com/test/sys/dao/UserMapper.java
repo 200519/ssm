@@ -7,6 +7,4 @@ import com.test.sys.model.User;
 
 public interface UserMapper extends BaseDao<UserMapper,User> {
 	User getUserByUserName(@Param("username")String username);
-	
-	void insert(User user);
 }
